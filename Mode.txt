@@ -9,7 +9,7 @@ If the Room Is More then RoomMax Then it Won't Spawn but If the Room is Less The
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MuhXd/DoorSuff/main/OtherSuff/Sprint"))()
 
 
-Mode.Loader({['WaitTime'] = 60,['DisableSeek'] = true,['DisableFigure'] = true,['RoomMax'] = 100,['RoomMin'] = 0},function()
+Mode.Loader({['WaitTime'] = 80,['DisableSeek'] = true,['DisableFigure'] = true,['RoomMax'] = 100,['RoomMin'] = 0},function()
     ---====== Define spawner ======---
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
@@ -87,7 +87,7 @@ end
 ---====== Run entity ======---
 
 Spawner.runEntity(entity)
-wait(13)
+or
 
 ---====== Define spawner ======---
 
