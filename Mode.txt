@@ -87,8 +87,7 @@ end
 ---====== Run entity ======---
 
 Spawner.runEntity(entity)
-or
-
+wait(15)
 ---====== Define spawner ======---
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
