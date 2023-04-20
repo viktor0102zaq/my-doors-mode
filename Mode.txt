@@ -1,7 +1,6 @@
 local Mode = loadstring(game:HttpGet("https://github.com/MuhXd/DoorSuff/blob/main/HardcoreTempate/TemplateCode.lua?raw=true"))()
 -- Messages in a Table And Launches The Main Loader
 Mode.StartCode({'Made by viktor0102zaq#3412',"Have fun! (you want)"})
-Mode.StartCode{'also join to my dc server https://discord.com/channels/1079384215034019901/1079384215034019903'})
 --[[
 WaitTime Is How Long it Takes to Spawn
 DisableSeek Makes it Not Appear In Seek and DisableFigure Does The same Thing Just for Figure
