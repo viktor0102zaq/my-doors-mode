@@ -7,9 +7,64 @@ DisableSeek Makes it Not Appear In Seek and DisableFigure Does The same Thing Ju
 If the Room Is More then RoomMax Then it Won't Spawn but If the Room is Less Then RoomMin Then it Won't Spawn
 --]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MuhXd/DoorSuff/main/OtherSuff/Sprint"))()
+while true do
+   task.wait(20)
+   ---====== Define spawner ======---
+local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Item%20Spawner/Source.lua"))();
 
+---====== Create item ======---
+local currentRoomIndex = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value; -- Get index of the current room
 
-Mode.Loader({['WaitTime'] = 90,['DisableSeek'] = true,['DisableFigure'] = true,['RoomMax'] = 100,['RoomMin'] = 0},function()
+local item = spawner.createItem({
+    Url = "https://github.com/RegularVynixu/Utilities/blob/main/Doors/Item%20Spawner/Assets/Template%20Item.rbxm?raw=true";
+    Spawning = {
+        Offset = CFrame.new();
+        MinRoom = currentRoomIndex; -- Set min room index to current room's index
+        MaxRoom = currentRoomIndex; -- Set max room index to current room's index
+        Chance = 100;
+    };
+    Locations = {
+        Drawers = true;
+        Tables = true;
+        Chests = true;
+        Floor = true;
+    };
+    Prompt = {
+        Range = 7;
+        Duration = 0;
+    };
+});
+
+---====== Debug ======---
+item.Debug.OnSpawned = function()
+    print("Item spawned:", item);
+end;
+
+item.Debug.OnPickedUp = function()
+    print("Item picked up:", item);
+end;
+
+item.Debug.OnEquipped = function()
+    print("Item equipped:", item);
+end;
+
+item.Debug.OnActivated = function()
+    print("Item activated:", item);
+end;
+
+item.Debug.OnUnequipped = function()
+    print("Item unequipped:", item);
+end;
+
+item.Debug.OnEnteredItemRoom = function(room)
+    print("Entered room:", room, "of item:", item);
+end;
+
+---====== Spawn item ======---
+spawner.spawnItem(item);
+end
+
+Mode.Loader({['WaitTime'] = 140,['DisableSeek'] = true,['DisableFigure'] = true,['RoomMax'] = 100,['RoomMin'] = 0},function()
 task.wait(30)
     ---====== Define spawner ======---
 
@@ -88,26 +143,26 @@ end
 ---====== Run entity ======---
 
 Spawner.runEntity(entity)
-task.wait(30)
----====== Define spawner ======---
+task.wait(50)
+    ---====== Define spawner ======---
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
 
 ---====== Create entity ======---
 
 	local entity = Spawner.createEntity({
-    CustomName = "A-200",
-    Model = "(rbxassetid://12304855811",
-    Speed = 90,
-    MoveDelay = 6,
-    HeightOffset = 1,
+    CustomName = "Rebound",
+    Model = "(rbxassetid://12254145022",
+    Speed = 180,
+    MoveDelay = 1,
+    HeightOffset = 0,
     CanKill = true,
-    KillRange = 30,
-    SpawnInFront = true,
+    KillRange = 50,
+    SpawnInFront = false,
     ShatterLights = true,
     FlickerLights = {
-        Enabled = true,
-        Duration = 0.5
+        Enabled = false,
+        Duration = 2
     },
     Cycles = {
         Min = 2,
@@ -116,14 +171,14 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
     },
     CamShake = {
         Enabled = true,
-        Values = {2.5, 56, 0.2, 2},
-        Range = 120399
+        Values = {2.5, 54, 0.1, 1},
+        Range = 1231
     },
-    ResistCrucifix = true,
+    ResistCrucifix = false,
     BreakCrucifix = true,
     IsCuriousLight = false
 })
-wait(10)
+
 
 
 ---====== Debug ======---
@@ -134,16 +189,6 @@ end
 
 entity.Debug.OnEntityDespawned = function()
     print("Entity has despawned")
-    	wait(4)
-	local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
-
--- Creates and displays your custom achievement
-Achievements.Get({
-    Title = "What is this thing?",
-    Desc = "Why you hiding from me?",
-    Reason = "Encounter depth",
-    Image = "12932323164",
-})
 end
 
 entity.Debug.OnEntityStartMoving = function()
