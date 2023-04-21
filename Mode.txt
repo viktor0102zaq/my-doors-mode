@@ -10,7 +10,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MuhXd/DoorSuff/main/O
 
 
 Mode.Loader({['WaitTime'] = 80,['DisableSeek'] = true,['DisableFigure'] = true,['RoomMax'] = 100,['RoomMin'] = 0},function()
-task.wait(60)
+task.wait(30)
     ---====== Define spawner ======---
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
@@ -88,8 +88,7 @@ end
 ---====== Run entity ======---
 
 Spawner.runEntity(entity)
-wait(15)
-task.wait(60)
+task.wait(30)
 ---====== Define spawner ======---
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
