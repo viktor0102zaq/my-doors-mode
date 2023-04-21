@@ -9,7 +9,7 @@ If the Room Is More then RoomMax Then it Won't Spawn but If the Room is Less The
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MuhXd/DoorSuff/main/OtherSuff/Sprint"))()
 
 
-Mode.Loader({['WaitTime'] = 80,['DisableSeek'] = true,['DisableFigure'] = true,['RoomMax'] = 100,['RoomMin'] = 0},function()
+Mode.Loader({['WaitTime'] = 90,['DisableSeek'] = true,['DisableFigure'] = true,['RoomMax'] = 100,['RoomMin'] = 0},function()
 task.wait(30)
     ---====== Define spawner ======---
 
@@ -20,11 +20,11 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 	local entity = Spawner.createEntity({
     CustomName = "Depth",
     Model = "(rbxassetid://11535848347",
-    Speed = 161,
+    Speed = 170,
     MoveDelay = 9,
     HeightOffset = 1,
     CanKill = true,
-    KillRange = 50,
+    KillRange = 30,
     SpawnInFront = false,
     ShatterLights = true,
     FlickerLights = {
@@ -102,7 +102,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
     MoveDelay = 6,
     HeightOffset = 1,
     CanKill = true,
-    KillRange = 50,
+    KillRange = 30,
     SpawnInFront = true,
     ShatterLights = true,
     FlickerLights = {
@@ -116,8 +116,8 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
     },
     CamShake = {
         Enabled = true,
-        Values = {2.5, 54, 0.1, 1},
-        Range = 1203999
+        Values = {2.5, 56, 0.2, 2},
+        Range = 120399
     },
     ResistCrucifix = true,
     BreakCrucifix = true,
