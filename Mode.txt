@@ -10,6 +10,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MuhXd/DoorSuff/main/O
 
 
 Mode.Loader({['WaitTime'] = 80,['DisableSeek'] = true,['DisableFigure'] = true,['RoomMax'] = 100,['RoomMin'] = 0},function()
+task.wait(60)
     ---====== Define spawner ======---
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
@@ -88,6 +89,7 @@ end
 
 Spawner.runEntity(entity)
 wait(15)
+task.wait(60)
 ---====== Define spawner ======---
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
@@ -133,6 +135,16 @@ end
 
 entity.Debug.OnEntityDespawned = function()
     print("Entity has despawned")
+    	wait(4)
+	local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+
+-- Creates and displays your custom achievement
+Achievements.Get({
+    Title = "What is this thing?",
+    Desc = "Why you hiding from me?",
+    Reason = "Encounter depth",
+    Image = "12932323164",
+})
 end
 
 entity.Debug.OnEntityStartMoving = function()
