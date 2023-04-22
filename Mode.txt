@@ -167,3 +167,82 @@ end
 
 Spawner.runEntity(entity)
 end)
+task.wait(20)
+    ---====== Define spawner ======---
+
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
+
+---====== Create entity ======---
+
+	local entity = Spawner.createEntity({
+    CustomName = "A-221",
+    Model = "(rbxassetid://12653054233",
+    Speed = 300,
+    MoveDelay = 9,
+    HeightOffset = 1,
+    CanKill = true,
+    KillRange = 50,
+    SpawnInFront = false,
+    ShatterLights = true,
+    FlickerLights = {
+        Enabled = true,
+        Duration = 1
+    },
+    Cycles = {
+        Min = 2,
+        Max = 2,
+        Delay = 2
+    },
+    CamShake = {
+        Enabled = true,
+        Values = {2.5, 54, 0.1, 1},
+        Range = 1231123
+    },
+    ResistCrucifix = false,
+    BreakCrucifix = true,
+    IsCuriousLight = false
+})
+
+
+
+---====== Debug ======---
+
+entity.Debug.OnEntitySpawned = function()
+    print("Enjoy chaos :<")
+end
+
+entity.Debug.OnEntityDespawned = function()
+    print("Entity has despawned")
+end
+
+entity.Debug.OnEntityStartMoving = function()
+    print("Entity started moving")
+end
+
+entity.Debug.OnEntityFinishedRebound = function()
+    print("Entity finished rebound")
+end
+
+entity.Debug.OnEntityEnteredRoom = function(room)
+    print("Entity entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function()
+    print("you look at the entites for no reason")
+end
+
+entity.Debug.OnDeath = function()
+    print("L")
+end
+
+--[[
+    NOTE: By overwriting 'OnUseCrucifix', the default crucifixion will be ignored and this function will be called instead
+    entity.Debug.OnUseCrucifix = function()
+        print("Custom crucifixion script here")
+    end
+]]--
+
+---====== Run entity ======---
+
+Spawner.runEntity(entity)
+end)
