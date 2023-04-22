@@ -208,7 +208,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 ---====== Debug ======---
 
 entity.Debug.OnEntitySpawned = function()
-    print("Enjoy chaos :<")
+    print("Entity spawned")
 end
 
 entity.Debug.OnEntityDespawned = function()
@@ -220,7 +220,7 @@ entity.Debug.OnEntityStartMoving = function()
 end
 
 entity.Debug.OnEntityFinishedRebound = function()
-    print("Entity finished rebound")
+    print("Entity make an rebound")
 end
 
 entity.Debug.OnEntityEnteredRoom = function(room)
@@ -228,11 +228,11 @@ entity.Debug.OnEntityEnteredRoom = function(room)
 end
 
 entity.Debug.OnLookAtEntity = function()
-    print("you look at the entites for no reason")
+    print("you look at the entity")
 end
 
 entity.Debug.OnDeath = function()
-    print("L")
+    print("You died")
 end
 
 --[[
