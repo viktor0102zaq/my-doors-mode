@@ -166,7 +166,6 @@ end
 ---====== Run entity ======---
 
 Spawner.runEntity(entity)
-end)
 task.wait(20)
     ---====== Define spawner ======---
 
